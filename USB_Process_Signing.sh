@@ -67,7 +67,7 @@ if [[ "$CryptoDrivefromlabel" == "$CryptoDrivefromUUID" && "$CryptoDrivefromUUID
 			CryptoPublicKey=/mnt/Crypto/Prod-public.key
 			
 			if [[ -f "$Filetosign" && -f "$CryptoPrivateKey" && -f "$CryptoPublicKey"  ]]; then
-				echo "Environment ready to Sign the infii File..."
+				echo "Environment ready to Sign the  File..."
 				echo "Press 'y' to continue or 'n' to exit"
 	   
 				read -s -n 1 key
@@ -75,7 +75,7 @@ if [[ "$CryptoDrivefromlabel" == "$CryptoDrivefromUUID" && "$CryptoDrivefromUUID
 				case $key in 
 				    y|Y)
 					     echo "You pressed 'y'. Signing..."
-					     echo "*** Signing Infii Files..."
+					     echo "*** Signing  Files..."
 					     openssl dgst -sha256 -sign "$CryptoPrivateKey" -out "$Filetosign.sign" "$Filetosign"
 					     echo "*** Verifying Signature..."
 					     openssl dgst -sha256 -verify "$CryptoPublicKey" -signature "$Filetosign.sign" "$Filetosign"
